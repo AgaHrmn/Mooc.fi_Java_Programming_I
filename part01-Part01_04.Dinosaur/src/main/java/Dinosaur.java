@@ -5,6 +5,6 @@ public class Dinosaur {
         // Write your program here
         System.out.println("Once upon a time");
         System.out.println("there was");
-        System.out.println("a dinosaur");
+        System.out.println("a dinosaur!");
     }
 }
