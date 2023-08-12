@@ -1,12 +1,14 @@
-
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         
-        // Write your program here -- consider breaking the program into 
-        // multiple classes.
+        Scanner s = new Scanner(System.in);
+        Point p = new Point();
+        UserInterface ui = new UserInterface(p, s);
+        
+        ui.start();
+
     }
 }
