@@ -13,9 +13,5 @@ public class RecipeSearch {
         UserInterface ui = new UserInterface(file, scanner);
         ui.start();
 
-        //testing code:         
-//        dataBase.showLines();
-//        dataBase.createDB();
-//        dataBase.showRecipes();
     }
 }

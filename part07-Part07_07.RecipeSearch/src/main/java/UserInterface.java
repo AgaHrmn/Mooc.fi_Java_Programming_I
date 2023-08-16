@@ -34,6 +34,8 @@ public class UserInterface {
         System.out.println("list - lists the recipes");
         System.out.println("stop - stops the program");
         System.out.println("find name - searches recipes by name");
+        System.out.println("find cooking time - searches recipes by cooking time");
+        System.out.println("find ingredient - searches recipes by ingredient");
     }
 
     public String readCommand() {
@@ -48,36 +50,65 @@ public class UserInterface {
             String command = readCommand();
             switch (command) {
                 case "list":
-                    System.out.println("\nRecipes:");
                     this.showRecipes();
                     break;
+                case "find name":
+                    this.findName();
+                    break;
+                case "find cooking time":
+                    this.findTime();
+                    break;
+                case "find ingredient": {
+                    this.findIngredient();
+                    break;
+                }
                 case "stop":
                     flag = false;
                     break;
-                case "find name":
-                    System.out.println(this.findName());;
-                    break;
 
             }
         }
     }
 
-    public String findName() {
+    public void findName() {
         System.out.println("Searched word: ");
         String name = scan.nextLine();
 
-        for (Recipe r : recipeDB.getRecipes()){
+        System.out.println("\nRecipes:");
+        for (Recipe r : recipeDB.getRecipes()) {
             if (r.getName().contains(name)) {
-                return r.toString(); 
+                System.out.println(r);
             }
         }
-        return "Could not find recipe.";
+    }
+
+    public void findTime() {
+        System.out.println("Max cooking time: ");
+        int time = Integer.valueOf(scan.nextLine());
+        System.out.println("\nRecipes:");
+        for (Recipe r : recipeDB.getRecipes()) {
+            if (Integer.valueOf(r.getTime()) <= time) {
+                System.out.println(r);
+            }
+        }
+    }
+
+    public void findIngredient() {
+        System.out.println("Ingredient: ");
+        String search = scan.nextLine();
+
+        System.out.println("\nRecipes:");
+        for (Recipe r : recipeDB.getRecipes()) {
+            if (r.getIngredients().contains(search)) {
+                System.out.println(r);
+            }
+        }
     }
 
     public void showRecipes() {
+        System.out.println("\nRecipes:");
         for (Recipe r : recipeDB.getRecipes()) {
             System.out.println(r);
-//            r.showIngredients();
         }
     }
 }

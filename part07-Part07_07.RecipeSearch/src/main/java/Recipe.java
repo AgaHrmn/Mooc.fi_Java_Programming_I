@@ -25,10 +25,8 @@ public class Recipe {
         return this.cookingTime;
     }
 
-    public void showIngredients() {
-        for (int i = 0; i < ingredients.size(); i++) {
-            System.out.println(i+1 + ". " + ingredients.get(i));
-        }
+    public ArrayList<String> getIngredients() {
+        return this.ingredients;
     }
 
     public String toString() {

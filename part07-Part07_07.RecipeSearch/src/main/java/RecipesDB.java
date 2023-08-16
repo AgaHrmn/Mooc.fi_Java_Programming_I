@@ -20,12 +20,6 @@ public class RecipesDB {
         this.createDB();
     }
 
-//    public void showLines() {
-//        for (int i = 0; i < lines.size(); i++) {
-//            System.out.println(i + ". " + lines.get(i));
-//        }
-//    }
-
     public int findNextIndex(int beginingIndex) {
         for (int i = beginingIndex; i < lines.size(); i++) {
             if (lines.get(i).isEmpty()) {
