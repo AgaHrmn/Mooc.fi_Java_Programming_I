@@ -17,13 +17,14 @@ public class RecipesDB {
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
+        this.createDB();
     }
 
-    public void showLines() {
-        for (int i = 0; i < lines.size(); i++) {
-            System.out.println(i + ". " + lines.get(i));
-        }
-    }
+//    public void showLines() {
+//        for (int i = 0; i < lines.size(); i++) {
+//            System.out.println(i + ". " + lines.get(i));
+//        }
+//    }
 
     public int findNextIndex(int beginingIndex) {
         for (int i = beginingIndex; i < lines.size(); i++) {
@@ -75,11 +76,8 @@ public class RecipesDB {
             }
         }
     }
-
-    public void showRecipes() {
-        for (Recipe r : recipesDB) {
-            System.out.println(r);
-            r.showIngredients();
-        }
+    
+    public ArrayList<Recipe> getRecipes() {
+        return recipesDB;
     }
 }

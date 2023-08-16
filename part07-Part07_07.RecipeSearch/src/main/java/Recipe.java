@@ -16,6 +16,14 @@ public class Recipe {
     public void addIngredient(String ingredient) {
         this.ingredients.add(ingredient);
     }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getTime() {
+        return this.cookingTime;
+    }
 
     public void showIngredients() {
         for (int i = 0; i < ingredients.size(); i++) {
