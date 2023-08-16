@@ -22,12 +22,6 @@ public class UserInterface {
         this.performCommand();
     }
 
-//    public String filePath() {
-//        System.out.print("File to read: ");
-//        String file = scan.nextLine();
-//
-//        return file;
-//    }
     public void listCommands() {
         System.out.println("");
         System.out.println("Commands:");
